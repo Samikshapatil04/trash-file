@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+
+<head>
+    <title>Java Session</title>
+    <!-- styling section -->
+    <style>
+        .box {
+            height: 60px;
+            width: 50vw;
+            border-style: solid;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 50px;
+        }
+
+        #sec-one {
+            background-color: palegreen;
+        }
+
+        #sec-two {
+            background-color: palevioletred;
+        }
+
+        #sec-three {
+            background-color: paleturquoise;
+        }
+
+        a {
+            font-size: 22;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        .input-box {
+            height: 60px;
+            width: 50vw;
+            border-style: solid;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 50px;
+            background-color: darkcyan;
+
+        }
+
+        #input-one {
+            height: 15px;
+            width: 50vw;
+            border-style: solid;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 50px;
+            border-color: darkcyan;
+            border-width: 17px;
+        }
+
+        #input-two {
+            height: 15px;
+            width: 50vw;
+            border-style: solid;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 50px;
+            border-color: darkcyan;
+            border-width: 17px;
+        }
+
+
+        .display {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            width: 100vw;
+            height: 150px;
+            display: flex;
+            padding: 20px;
+            background-color: rgb(203, 198, 198);
+            font-size: 32px;
+
+        }
+    </style>
+    <!-- javascript -->
+    <script>
+        function process(x, y) {
+            // process
+            let z = x + y;
+            let output = "";
+            if (z % 2 === 0) {
+                // output
+                output = "even";
+            }
+            else {
+                output = "odd";
+            }
+            return output;
+        }
+        function problemOne() {
+            // input
+            let x = prompt("Enter a Value of x =");
+            let y = prompt("Enter a Value of y =");
+
+            let z = process(x, y);
+            alert("The Given Value is " + z);
+        }
+        function problemTwo() {
+            // input
+            let x = 100;
+            let y = 100;
+
+            let z = process(x, y);
+            // output
+            console.log("The Value of X is ", z);
+        }
+        function problemThree() {
+            // input
+            let x = document.getElementById("input-one").value;
+            let y = document.getElementById("input-two").value;
+
+            let z = process(x, y);
+            // output
+            document.getElementById("display").innerHTML = z;
+        }
+    </script>
+</head>
+
+<body style="margin: 0;">
+
+    <div class="display" id="display"></div>
+    <!-- input box -->
+    <div class="input-box">
+        <input type="text" id="input-one" />
+    </div>
+    <div class="input-box">
+        <input type="text" id="input-two" />
+    </div>
+    <!-- button one -->
+    <div id="sec-one" class="box" onclick="problemOne()">
+        <h1>Button One</h1>
+    </div>
+    <!-- button two -->
+    <div id="sec-two" class="box" onclick="problemTwo()">
+        <h1>Button Two</h1>
+    </div>
+    <!-- button three -->
+    <div id="sec-three" class="box" onclick="problemThree()">
+        <h1>Button Three</h1>
+    </div>
+</body>
+
+</html>

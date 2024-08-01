@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+
+<head>
+    <title>Calculator</title>
+    <style>
+        .main-container {
+            width: 30vw;
+            height: 68vh;
+            background-color: #FFC4C4;
+            margin-top: 50px;
+            margin-left: 250px;
+            border-radius: 14px;
+            border-color: #850E35;
+            border-style: solid;
+            border-width: 12px;
+        }
+
+        #display {
+            width: 97.9%;
+            height: 26%;
+            border-radius: 14px;
+            border-style: double;
+            border-color: rgb(16, 16, 16);
+            margin-top: 2px;
+            margin-bottom: 2px;
+            margin-left: 2px;
+            margin-right: 2px;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            font-size: 32px;
+            color: black;
+            background-color: rgb(131, 163, 163);
+        }
+
+        .button-container {
+            width: 97.8%;
+            height: 67%;
+            background-color: #EE6983;
+            border-radius: 14px;
+            border-style: double;
+            border-color: rgb(18, 18, 18);
+            margin-top: 2px;
+            margin-bottom: 2px;
+            margin-left: 2px;
+            margin-right: 2px;
+        }
+
+        body {
+            width: 100vw;
+            height: 90vh;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        .button {
+            width: 44%;
+            height: 14%;
+            background-color: burlywood;
+            border-radius: 14px;
+            border-style: solid;
+            margin-top: 15px;
+            margin-left: 118px;
+            font-size: 20px;
+            cursor: pointer;
+            background-color: #C683D7;
+        }
+
+        .button:hover {
+            background-color: palegreen;
+        }
+
+        .container {
+            width: 70%;
+            height: 10%;
+            font-size: 15px;
+            background-color: palegoldenrod;
+            margin-top: 20px;
+            margin-left: 50px;
+        }
+    </style>
+    <!-- javascript -->
+    <script>
+         function iterate() {
+        // input
+             let table = prompt("What table do you want ?");
+             table = Number(table);
+    // process
+             let i = 1;
+            while (i <= 10) {
+                let output = table + " x " + i + " = " + i * table;
+                 console.log("", output); 
+                 i++;
+            }
+        }
+   
+    </script>
+</head>
+
+<body style="background-image: url(calci-four.jpeg);">
+    <!-- main section -->
+    <div class="main-container">
+        <!-- display section -->
+        <div id="display"></div>
+        <!-- button section -->
+        <div class="button-container"><br><br>
+            <input id="number-one" type="number" class="container" placeholder="0"></input><br><br>
+            <button class="button" onclick="iterate()">SUBMIT</button><br>
+            <button class="button" style="background-color: red;" onclick="clearFunction()">AC</button>
+        </div>
+    </div>
+</body>
+
+</html>
+
+<!-- 
+function toDisplay(value){
+    document.getElementById("display").value += value;
+}
+
+function calculate(){
+    document.getElementById("display").value = '' ;
+}
+ let total = 0;
+        let action = 0;
+        let displayString = "";
+
+        function numberType(passnumber) {
+            displayString = displayString + passnumber.toString();
+            document.getElementById("display").innerHTML = displayString;
+        }
+
+        function daysRemain() {
+            // input
+            let x = prompt("ENTER YOUR AGE: ")
+             //process
+            let y = Number(x)
+            let z = y % 2;
+            // output
+            document.getElementById("display").innerHTML = "Days Remaining :  " + z;
+            console.log("The Days Remaining is :  ", );
+        }
+        function number(action){
+             let result = 0;
+             if (action == "daysremain") {
+                result = "NUMBER IS EVEN" ;
+            }
+            else{
+                result="ODD Number"
+            }
+            document.getElementById("display").innerHTML = "Number is " + y;
+            console.log("CHECK ONE","Number is : ",x)
+        }

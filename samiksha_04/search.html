@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+
+<head>
+    <title>SEARCH</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            background-color: #f2f2f2;
+        }
+
+        .main-container {
+            width: 50vw;
+            height: 70vh;
+            margin: 50px auto;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+        }
+
+        .search-container {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .search-input {
+            width: 80%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 20px;
+            outline: none;
+        }
+
+        .search-button {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+            outline: none;
+        }
+
+        .search-button:hover {
+            background-color: #056c91;
+        }
+
+        #display {
+            width: 97.9%;
+            height: 26%;
+            border-radius: 14px;
+            border-style: double;
+            border-color: rgb(16, 16, 16);
+            margin-top: 2px;
+            margin-bottom: 2px;
+            margin-left: 2px;
+            margin-right: 2px;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            font-size: 32px;
+            color: black;
+        }
+    </style>
+    <script>
+        function studentName() {
+            let students = ["khushi", "samiksha", "achal", "ketki", "himanshu", "divyanshu", "ayush", "piyush", "riya"];
+            let input = document.getElementById("number-one").value.toLowerCase();
+            let result = false;
+            for (let i = 0; i < students.length; i++) {
+                if (students[i] == input) {
+                    result = true;
+                    break;
+                }
+            }
+
+            if (result) {
+                console.log("Student Found is ", input)
+                document.getElementById("display").innerHTML = "Student Found: " + input;
+            } else {
+                console.log("student not found")
+                document.getElementById("display").innerHTML = "Student Not Found";
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <div class="main-container">
+        <h1 style="text-align: left; color:#171616;font-size: 50px; margin-top:80px;margin-left: 150px ;">ENJOY
+            <br>PROGRAMMING
+        </h1>
+        <!--image division-->
+        <img src="enjoy.png" width="200px" height="200px" style="
+                    position: absolute;
+                    top: 20px;
+                    right:570px;margin-top: 30px; color:black">
+
+        <div class="search-container">
+            <input type="text" class="search-input" placeholder="Search name here...">
+            <button class="search-button" onclick="studentName()">SUBMIT</button>
+        </div>
+        <div id="display"></div>
+    </div>
+</body>
+
+</html>

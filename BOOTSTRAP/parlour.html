@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aarohi Beauty Parlour and Spa</title>
+    <link rel="icon" type="image/x-icon" href="/BOOTSTRAP/IMAGES/logo.png" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <style>
+        :root {
+            --primary-color: #ff69b4;
+            --primary-light: #ffa6d4;
+        }
+
+        .logo {
+            height: 5rem;
+            width: 5rem;
+            margin-right: 1rem;
+            /* Space between logo and text */
+        }
+
+        /* Navbar styles */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background-color: rgba(253, 154, 154, 0.834) !important;
+            padding: 1.5rem 0;
+            display: flex;
+            justify-content: center;
+            /* Center content horizontally */
+        }
+
+
+        .navbar-brand span {
+            margin-left: 10px;
+            font-size: 1.5rem;
+            /* Adjust font size as needed */
+        }
+
+        .navbar.scrolled {
+            background-color: rgb(246, 111, 143) !important;
+        }
+
+        .navbar-brand {
+            display: flex;
+            align-items: center;
+            /* Align items vertically */
+            text-decoration: none;
+            color: inherit;
+            font-family: cursive;
+        }
+
+        .navbar-nav .nav-item .nav-link {
+            color: #fff;
+            transition: color 0.3s ease;
+            font-size: 1.6rem;
+            padding: 0.5rem 1rem;
+        }
+
+        .navbar-nav .nav-item:hover .nav-link {
+            color: var(--primary-color);
+            text-decoration-color: whitesmoke;
+            transition: background-color 0.3s ease;
+            background-color: #f8f0f4d1;
+            border-radius: 5%;
+        }
+
+        /* Dropdown styles */
+        .dropdown:hover .dropdown-menu {
+            display: block;
+        }
+
+        .dropdown-menu {
+            background-color: rgb(188, 140, 156);
+            border: none;
+            border-radius: 0;
+            margin-top: 0;
+        }
+
+        .dropdown-item {
+            color: #fff;
+            transition: background-color 0.3s ease;
+            font-size: 1.1rem;
+            padding: 0.5rem 1rem;
+        }
+
+        .dropdown-item:hover {
+            background-color: wheat;
+            color: #fc5353;
+            font-size: 1.2rem;
+        }
+
+        /* Carousel styles */
+        .carousel-item {
+            height: 100vh;
+            min-height: 300px;
+            background: no-repeat center center scroll;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+        }
+
+        .carousel-caption {
+            left: 5%;
+            right: 5%;
+            top: 35%;
+            bottom: auto;
+            text-align: left;
+            z-index: 10;
+            padding: 0;
+        }
+
+        .carousel-caption h5 {
+            font-size: 3.5rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 1rem;
+            color: #fff;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .carousel-caption p {
+            font-size: 1.5rem;
+            line-height: 1.5;
+            color: #fff;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+            margin-bottom: 1.5rem;
+        }
+
+        .carousel-caption .btn {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            transition: background-color 0.3s ease;
+            font-size: 1.2rem;
+            padding: 0.75rem 2rem;
+        }
+
+        .carousel-caption .btn:hover {
+            background-color: var(--primary-light);
+            border: #FF1493;
+        }
+
+        .carousel-control-prev:hover,
+        .carousel-control-next:hover {
+            background-color: rgba(255, 105, 180, 0.2);
+            transition: background-color 0.3s ease;
+        }
+
+        /* Pink overlay */
+        .carousel-item::before {
+            content: "";
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            background: rgba(255, 105, 180, 0.3);
+            transition: background 0.3s ease;
+        }
+
+        .carousel-item:hover::before {
+            background: rgba(255, 105, 180, 0.1);
+        }
+
+
+        .heading-content {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .tra-header {
+            color: #888;
+            font-size: 1.5rem;
+        }
+
+        .h3-xl {
+            color: #333;
+            font-size: 2.5rem;
+        }
+
+        .txt-color-05 {
+            color: #666;
+        }
+
+        .fbox-2 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .fbox-ico-center img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .h5-md {
+            font-size: 1.25rem;
+            margin-top: 15px;
+        }
+
+        /* sec-4 */
+        .content-section {
+            background-color: #fff;
+            border-radius: 15px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .pink-text {
+            color: #0a0a0a;
+            font-size: 3rem;
+        }
+
+        .ico-65 {
+            font-size: 2rem;
+        }
+
+        .cbox {
+            display: flex;
+            align-items: start;
+            margin-bottom: 1.5rem;
+        }
+
+        .cbox-ico {
+            margin-right: 1rem;
+        }
+
+        .cbox-txt p {
+            margin-bottom: 0;
+        }
+
+        .btn-pink {
+            background-color: #fd49a3;
+            border-color: #FF69B4;
+            color: white;
+        }
+
+        .btn-pink:hover {
+            background-color: #fef9fb;
+            border-color: #FF1493;
+            color: #FF1493;
+        }
+
+        .checkk {
+            color: #FF1493;
+        }
+
+        /* section four */
+        .row.align-items-md-stretch>div[class^="col-"]>div {
+            transition: all 0.3s ease;
+        }
+
+        .row.align-items-md-stretch>div[class^="col-"]>div:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(255, 192, 203, 0.3);
+        }
+
+        .btn-outline-dark {
+            border-color: #FFC0CB;
+            color: #FFC0CB;
+        }
+
+        .btn-outline-dark:hover {
+            background-color: #FFC0CB;
+            color: white;
+        }
+
+        /* Mobile adjustments */
+        @media (max-width: 767px) {
+            .navbar-brand {
+                flex-direction: row;
+                /* Stack logo and text vertically on mobile */
+                align-items: center;
+                /* Center logo and text */
+                font-size: 1.5rem;
+            }
+
+            .logo {
+                margin-bottom: 0.5rem;
+                /* Space between logo and text on mobile */
+            }
+
+            .navbar-nav .nav-item .nav-link {
+                font-size: 1rem;
+            }
+
+            .carousel-caption {
+                top: 25%;
+            }
+
+            .carousel-caption h5 {
+                font-size: 2rem;
+            }
+
+            .carousel-caption p {
+                font-size: 1.1rem;
+                line-height: 1.3;
+            }
+
+            .carousel-caption .btn {
+                font-size: 1rem;
+                padding: 0.5rem 1.5rem;
+            }
+        }
+
+        /* navigation name adjustment */
+        
+    </style>
+</head>
+
+<body>
+    <!-- Carousel -->
+    <!-- Carousel -->
+    <div id="spaCarousel" class="carousel slide" data-bs-ride="carousel">
+        <!-- Navbar -->
+        <div id="spaCarousel" class="carousel slide" data-bs-ride="carousel">
+            <!-- Navbar -->
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <div class="container">
+                    <a class="navbar-brand" href="#" style="font-family: cursive;">
+                        <img src="/BOOTSTRAP/IMAGES/logo.png" class="logo" alt="Logo">
+                        <span>Aarohi Beauty Parlour & Spa</span>
+                    </a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav ms-auto">
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Home</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="servicesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Services
+                                </a>
+                                <ul class="dropdown-menu" aria-labelledby="servicesDropdown">
+                                    <li><a class="dropdown-item" href="#">Massage</a></li>
+                                    <li><a class="dropdown-item" href="#">Facial</a></li>
+                                    <li><a class="dropdown-item" href="#">Body Treatments</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">About</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Contact</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>
+        <!-- carousel starts -->
+        <div class="carousel-inner">
+            <div class="carousel-item active" style="background-image: url('/BOOTSTRAP/IMAGES/carl_img.jpg')">
+                <div class="carousel-caption">
+                    <!-- https://static.vecteezy.com/system/resources/previews/037/246/742/non_2x/ai-generated-make-up-products-advertisment-background-with-copy-space-free-photo.jpg -->
+                    <h5 style="color: #0a090a;">Welcome to, <br> Aarohi Beauty Parlour <br>and Spa</h5>
+                    <p style="color:#666;">Experience ultimate relaxation and rejuvenation</p>
+                    <a href="#" class="btn btn-lg">Book Now</a>
+                </div>
+            </div>
+            <div class="carousel-item" style="background-image: url('/BOOTSTRAP/IMAGES/carll_makeup.jpg')">
+                <div class="carousel-caption">
+                    <h5>Bridal Beauty</h5>
+                    <p>Makeup is the finishing touch, but bridal beauty starts with self-love.</p>
+                    <a href="#" class="btn btn-lg">View Services</a>
+                </div>
+            </div>
+            <div class="carousel-item"
+                style="background-image: url('https://stylespeak.com/wp-content/uploads/2022/05/rudsetti_Freepik.jpg ')">
+                <div class="carousel-caption">
+                    <!-- https://stylespeak.com/wp-content/uploads/2022/05/rudsetti_Freepik.jpg 
+                    https://st4.depositphotos.com/4811591/20596/i/450/depositphotos_205961866-stock-photo-hair-straightening-beauty-salon-hairdresser.jpg-->
+                    <h5>Your hair is the best accessory you own.</h5>
+                    <p>Check out our latest spa packages and deals</p>
+                    <a href="#" class="btn btn-lg">See Offers</a>
+                </div>
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#spaCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#spaCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+    <!-- carousel ends -->
+
+    <!-- 2nd section code starts -->
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-12">
+                <div class="heading-content">
+                    <h2 class="tra-header">Feel Special</h2>
+                    <h3 class="h3-xl">Making You More Stylish</h3>
+                    <p class="txt-color-05">Aliquam a augue suscipit, luctus neque purus ipsum neque undo dolor primis
+                        libero tempus, blandit a cursus varius at magna tempor</p>
+                </div>
+            </div>
+        </div>
+        <!-- row one -->
+        <div class="row">
+            <div class="col-md-4">
+                <div class="fbox-2">
+                    <div class="fbox-ico-center">
+                        <img src="https://naomisheadmasters.com/wp-content/uploads/2023/10/Bridal-Makeup-Price-List-In-India.jpg"
+                            alt="Bridal Makeup">
+                    </div>
+                    <div class="fbox-txt-center">
+                        <h5 class="h5-md">Bridal Makeup</h5>
+                        <p>Vestibulum commodo sapien non elit porttitor vitae volutpat nibh mollis. Nulla porta risus
+                            non elit porttito</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="fbox-2">
+                    <div class="fbox-ico-center">
+                        <img src="/BOOTSTRAP/IMAGES/hairr.png" alt="Hair Services">
+                        <!-- https://jthemes.net/themes/wp/spamagic/wp-content/uploads/2021/12/serv-02.png -->
+                    </div>
+                    <div class="fbox-txt-center">
+                        <h5 class="h5-md">Hair Services</h5>
+                        <p>Vestibulum commodo sapien non elit porttitor vitae volutpat nibh mollis. Nulla porta risus
+                            non elit porttito</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="fbox-2">
+                    <div class="fbox-ico-center">
+                        <img src="/BOOTSTRAP/IMAGES/Screenshot 2024-07-30 at 08.46.01.png" alt="Skin Treatment">
+                    </div>
+                    <div class="fbox-txt-center">
+                        <h5 class="h5-md">Skin Treatment</h5>
+                        <p>Vestibulum commodo sapien non elit porttitor vitae volutpat nibh mollis. Nulla porta risus
+                            non elit porttito</p>
+                    </div>
+                </div>
+            </div>
+            <!-- row two -->
+            <div class="col-md-4">
+                <div class="fbox-2">
+                    <div class="fbox-ico-center">
+                        <img src="https://jthemes.net/themes/wp/spamagic/wp-content/uploads/2021/12/serv-03.png"
+                            alt="Massage">
+                    </div>
+                    <div class="fbox-txt-center">
+                        <h5 class="h5-md">Massage</h5>
+                        <p>Vestibulum commodo sapien non elit porttitor vitae volutpat nibh mollis. Nulla porta risus
+                            non elit porttito</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="fbox-2">
+                    <div class="fbox-ico-center">
+                        <img src="https://jthemes.net/themes/wp/spamagic/wp-content/uploads/2021/12/serv-03.png"
+                            alt="Massage">
+                    </div>
+                    <div class="fbox-txt-center">
+                        <h5 class="h5-md">Massage</h5>
+                        <p>Vestibulum commodo sapien non elit porttitor vitae volutpat nibh mollis. Nulla porta risus
+                            non elit porttito</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <!-- section 3rd starts -->
+    <div class="container py-5">
+        <div class="row content-section p-4" style="background-color: #eec2d881">
+            <div class="col-md-6">
+                <img src="https://jthemes.net/themes/wp/spamagic/wp-content/uploads/2021/12/image-01.png"
+                    class="img-fluid" alt="Spa Image">
+            </div>
+            <div class="col-md-6">
+                <h2 class="mb-4 pink-text">Your Beauty and Success Starts Here</h2>
+                <p class="mb-4">Porta semper lacus cursus, feugiat primis ultrice a ligula risus auctor an tempus
+                    feugiat dolor lacinia cubilia curae integer orci congue and metus mollislorem primis in integer
+                    metus mollis faucibus</p>
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="cbox">
+                            <div class="cbox-ico">
+                                <div class="pink-text ico-65">
+                                    <i class="far fa-check-circle"></i>
+                                </div>
+                            </div>
+                            <div class="cbox-txt">
+                                <p><i class="bx bx-check-circle checkk"></i> Body Treatment</p>
+                            </div>
+                        </div>
+                        <div class="cbox">
+                            <div class="cbox-ico">
+                                <div class="pink-text ico-65">
+                                    <i class="far fa-check-circle"></i>
+                                </div>
+                            </div>
+                            <div class="cbox-txt">
+                                <p><i class="bx bx-check-circle checkk"></i> Massage Therapy</p>
+                            </div>
+                        </div>
+                        <div class="cbox">
+                            <div class="cbox-ico">
+                                <div class="pink-text ico-65">
+                                    <i class="far fa-check-circle"></i>
+                                </div>
+                            </div>
+                            <div class="cbox-txt">
+                                <p><i class="bx bx-check-circle checkk"></i> Skin Care</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="cbox">
+                            <div class="cbox-ico">
+                                <div class="pink-text ico-65">
+                                    <i class="far fa-check-circle"></i>
+                                </div>
+                            </div>
+                            <div class="cbox-txt">
+                                <p><i class="bx bx-check-circle checkk"></i> Lifestyle Program</p>
+                            </div>
+                        </div>
+                        <div class="cbox">
+                            <div class="cbox-ico">
+                                <div class="pink-text ico-65">
+                                    <i class="far fa-check-circle"></i>
+                                </div>
+                            </div>
+                            <div class="cbox-txt">
+                                <p><i class="bx bx-check-circle checkk"></i> Waxing</p>
+                            </div>
+                        </div>
+                        <div class="cbox">
+                            <div class="cbox-ico">
+                                <div class="pink-text ico-65">
+                                    <i class="far fa-check-circle"></i>
+                                </div>
+                            </div>
+                            <div class="cbox-txt">
+                                <p><i class="bx bx-check-circle checkk"></i> Safety Standards</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <a href="" class="btn btn-pink mt-4">Read More</a>
+            </div>
+        </div>
+    </div>
+    <!-- appoinment section -->
+    <div class="container-fluid spa-section"
+        style="background-image: url('https://www.assuranceskin.com/wp-content/uploads/2020/09/ASkin-blog-beauty4.jpg'); background-size: cover; background-position: center; padding: 50px 0;">
+        <div class="row">
+            <div class="col-md-6">
+
+                <div class="content-wrapper"
+                    style="background-color: rgba(255, 255, 255, 0.363); padding: 30px; border-radius: 10px;">
+
+                    <div class="heading-content text-left">
+                        <h2 class="heading-style-two" style="color: #0a090a;">Want to Make a Booking or Have a Question?
+                        </h2>
+                    </div>
+                    <div class="description-content" style="color: #333;">
+                        <p>Call us : <strong style="color: #FF69B4;">+91 8805717266</strong> or fill out our online
+                            booking & enquiry form and we will contact you</p>
+                    </div>
+                    <div class="button-wrapper text-center text-md-start">
+                        <a href="" class="btn btn-pink mt-4">Make an Appoinment</a>
+                    </div>
+
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="image-wrapper"
+                    style="height: 100%; display: flex; align-items: center; justify-content: center;">
+                </div>
+            </div>
+        </div>
+    </div><br>
+    <div class="heading-content text-left">
+        <h2 class="heading-style-two" style="color: #0a090a;">Contact Us
+        </h2>
+    </div>
+    <div>
+    <iframe
+        src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3717.8859187235234!2d78.580778!3d21.2759829!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bd4579ed852119f%3A0x3567265391050dc5!2sAarohi%20Beauty%20parlour%20%26%20Spa!5e0!3m2!1sen!2sin!4v1722439392312!5m2!1sen!2sin"
+        width="1582" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+    <!-- section four starts
+    <div class="row align-items-md-stretch justify-content-center">
+        <div class="col-md-5 mb-4">
+            <div class="h-100 p-4 text-dark rounded-3 d-flex flex-column justify-content-between position-relative"
+                style="min-height: 300px; overflow: hidden;">
+                <img src="path/to/your/image1.jpg" alt="Background 1"
+                    class="position-absolute top-0 start-0 w-100 h-100 object-fit-cover" style="z-index: -1;">
+                <div class="position-relative" style="z-index: 1;">
+                    <h2 class="fw-bold">Change the background</h2>
+                    <p>Swap the background-color utility and add a `.text-*` color utility to mix up the jumbotron look.
+                        Then, mix and match with additional component themes and more.</p>
+                </div>
+                <button class="btn btn-outline-dark align-self-start position-relative" style="z-index: 1;"
+                    type="button">Example button</button>
+            </div>
+        </div>
+        <div class="col-md-5 mb-4">
+            <div class="h-100 p-4 text-dark rounded-3 d-flex flex-column justify-content-between position-relative"
+                style="min-height: 300px; overflow: hidden; border: 2px solid #FFC0CB;">
+                <img src="path/to/your/image2.jpg" alt="Background 2"
+                    class="position-absolute top-0 start-0 w-100 h-100 object-fit-cover" style="z-index: -1;">
+                <div class="position-relative" style="z-index: 1;">
+                    <h2 class="fw-bold">Add borders</h2>
+                    <p>Or, keep it light and add a border for some added definition to the boundaries of your content.
+                        Be sure to look under the hood at the source HTML here as we've adjusted the alignment and
+                        sizing of both column's content for equal-height.</p>
+                </div>
+                <button class="btn btn-outline-dark align-self-start position-relative" style="z-index: 1;"
+                    type="button">Example button</button>
+            </div>
+        </div>
+    </div> -->
+
+
+   
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.3.3/js/bootstrap.min.js"></script>
+
+</body>
+
+</html>
+
+<!-- https://jthemes.net/themes/wp/spamagic/ -->
+
+<!-- https://naomisheadmasters.com/wp-content/uploads/2023/10/Bridal-Makeup-Price-List-In-India.jpg -->
+
+<!-- <div class="col-md-4">
+                <div class="fbox-2">
+                    <div class="fbox-ico-center">
+                        <img src="https://jthemes.net/themes/wp/spamagic/wp-content/uploads/2021/12/serv-03.png"
+                            alt="Massage">
+                    </div>
+                    <div class="fbox-txt-center">
+                        <h5 class="h5-md">Massage</h5>
+                        <p>Vestibulum commodo sapien non elit porttitor vitae volutpat nibh mollis. Nulla porta risus
+                            non elit porttito</p>
+                    </div>
+                </div>
+            </div> -->
